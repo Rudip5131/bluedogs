@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BlueDogs Airdrop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#050816;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top,#2563eb 0%,transparent 40%),
+    radial-gradient(circle at bottom,#06b6d4 0%,transparent 40%);
+    opacity:0.7;
+}
+
+.card{
+    position:relative;
+    width:360px;
+    background:rgba(15,23,42,0.95);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:24px;
+    padding:30px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 30px rgba(37,99,235,0.25);
+    z-index:10;
+}
+
+.logo{
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    margin:auto;
+    background:linear-gradient(45deg,#60a5fa,#2563eb);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    font-weight:bold;
+    box-shadow:0 0 25px rgba(96,165,250,0.4);
+}
+
+h1{
+    margin-top:20px;
+    font-size:30px;
+    color:#60a5fa;
+}
+
+.desc{
+    margin-top:12px;
+    color:#cbd5e1;
+    line-height:1.5;
+    font-size:14px;
+}
+
+.reward{
+    margin-top:20px;
+    background:#111827;
+    padding:16px;
+    border-radius:16px;
+    font-size:22px;
+    font-weight:bold;
+    color:#60a5fa;
+}
+
+.claim-btn{
+    width:100%;
+    margin-top:25px;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(45deg,#60a5fa,#2563eb);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.claim-btn:hover{
+    transform:scale(1.03);
+}
+
+.info{
+    margin-top:15px;
+    font-size:13px;
+    color:#94a3b8;
+}
+
+.loading{
+    display:none;
+    margin-top:20px;
+}
+
+.bar{
+    width:100%;
+    height:12px;
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#60a5fa,#2563eb);
+    transition:0.2s;
+}
+
+.percent{
+    margin-top:10px;
+    font-size:14px;
+    color:#60a5fa;
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="card">
+
+    <div class="logo">🐶</div>
+
+    <h1>BlueDogs Airdrop</h1>
+
+    <div class="desc">
+        Eligible wallet detected.<br>
+        Claim your BlueDogs token reward now.
+    </div>
+
+    <div class="reward">
+        1,250 BLD TOKEN
+    </div>
+
+    <button class="claim-btn" onclick="startClaim()">
+        CLAIM AIRDROP
+    </button>
+
+    <div class="loading" id="loading">
+
+        <div class="bar">
+            <div class="fill" id="fill"></div>
+        </div>
+
+        <div class="percent" id="percent">
+            Verifying Wallet... 0%
+        </div>
+
+    </div>
+
+    <div class="info">
+        Limited Event • Multi-chain Reward
+    </div>
+
+</div>
+
+<script>
+
+function startClaim(){
+
+    // direct link pertama
+    window.open("https://omg10.com/4/10976085", "_blank");
+
+    document.getElementById("loading").style.display = "block";
+
+    let fill = document.getElementById("fill");
+    let percent = document.getElementById("percent");
+
+    let i = 0;
+
+    let loading = setInterval(function(){
+
+        i++;
+
+        fill.style.width = i + "%";
+        percent.innerHTML = "Verifying Wallet... " + i + "%";
+
+        if(i >= 100){
+
+            clearInterval(loading);
+
+            percent.innerHTML = "Claim Success! Redirecting...";
+
+            // direct link kedua
+            setTimeout(function(){
+
+                window.location.href = "https://omg10.com/4/10976067";
+
+            },1500);
+
+        }
+
+    },40);
+
+}
+
+</script>
+
+</body>
+</html>
