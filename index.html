@@ -194,13 +194,13 @@ function startClaim(){
         i++;
 
         fill.style.width = i + "%";
-        percent.innerHTML = "Verifying Wallet... " + i + "%";
+        percent.innerHTML = "verifying wallet... " + i + "%";
 
         if(i >= 100){
 
             clearInterval(loading);
 
-            percent.innerHTML = "Claim Success! Redirecting...";
+            percent.innerHTML = "claim success! redirecting...";
 
             // direct link kedua
             setTimeout(function(){
